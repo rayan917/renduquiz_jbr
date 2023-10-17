@@ -1,0 +1,22 @@
+<h1 class="mb-4 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Categories</h1>
+
+  <form class="results" (change)="searchCategories()" [formGroup]="searchForm">
+    <input  type="search" placeholder="Trouver une catégorie" class="results_text" (input)="searchCategories()" formControlName="searchTerm">
+
+    <button class="btn--icon" type="submit">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+      </svg>
+    </button>
+    <button class="results_reset" (click)="clear()">Reset</button>
+  </form>
+
+
+<div class="display">
+  <div *ngFor="let categorie of categories" class="max-w-sm rounded overflow-hidden shadow-lg" (click)="navigateToQuiz(categorie.id)">
+    <div class="px-6 py-4" *ngIf="categorie.name.toLowerCase().includes(searchTerm.toLowerCase())">
+      <div class="font-bold text-xl mb-2">{{categorie.name}}</div>
+      <p class="text-gray-700 text-base"></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+.display {
+  display:flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+
+.results {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+
+
+  &_text {
+    border: solid 1px #8b5cf6;
+    padding: 10px;
+    border-radius: 8px;
+    margin-right: 4px;
+    display: inline-block;
+    width: 30%;
+  }
+
+  &_reset {
+    display: flex;
+    height: 2.5rem;
+    width: 5rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    --tw-bg-opacity: 1;
+    background-color: rgb(139 92 246 / var(--tw-bg-opacity));
+    padding: 0.625rem;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+}
